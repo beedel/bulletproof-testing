@@ -86,7 +86,17 @@ Can you think of any happy/failure test cases for these files? What are the poss
 
 If you want to, you can also have a look at the `main.py` file. It sets up the database and runs the application.
 
-## Get to Testing!
+## Get to Testing
+Let's write some tests for this application.
+
+### CarApiClientTest.py
+Start with the `CarApiClientTest.py` file in the `tests/` folder. The comment above the class name includes guidance on what is already there and what is missing. Can you finish writing the test code for this class?
+
+### CarResolverTest.py
+Start with the `CarResolverTest.py` file in the `tests/` folder. The comment above the class name includes guidance on what is already there and what is missing. Can you finish writing the test code for this class?
+
+### Whoops!
+Now think of this scenario.
 
 
 ## Extra

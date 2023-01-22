@@ -7,15 +7,14 @@ This is the test class for CarApiClient.
 
 In the setUp method we initialise the original class. It has no dependencies, so no mocks are used.
 
-We have added a 'happy' test case scenario - 'test_manufacturer_is_not_bankrupt'.
+We have added a 'happy' test case scenario - 'test_manufacturer_is_not_bankrupt',
+as well as a 'failure' test case scenario - 'test_unknown_manufacturer_raises_exception'.
 
-Look at the CarApiClient class.
+Now ook at the original CarApiClient class.
 
-Can you find any 'failure' cases that you need to cover?
+Can you identify any 'failure' cases that you still need to cover?
 
-Are there any exceptions that you should ensure are thrown during code execution? In what case are they thrown?
-
-Try to write additional test cases to cover as much of the CarApiClient class as possible.
+Try to write the missing test case. Make sure you think of a good name for it!
 """
 
 
@@ -33,6 +32,10 @@ class CarApiClientTest(unittest.TestCase):
 
         # Assert
         self.assertEqual(expected, connected)
+
+    def test_unknown_manufacturer_raises_exception(self):
+        with self.assertRaises(ManufacturerNotFoundException):
+            self.car_api_client.manifacturer_is_not_bankrupt('Unknown')
 
 
 if __name__ == '__main__':

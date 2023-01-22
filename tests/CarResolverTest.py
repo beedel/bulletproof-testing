@@ -16,7 +16,7 @@ Use these two to initialise CarResolver for this test.
 We have added two test cases you should cover - 'test_gets_all_cars' and 
 'test_throws_exception_when_manufacturer_is_bankrupt'.
 
-Have a look at the two.
+Have a go at the two.
 """
 
 class CarResolverTest(unittest.TestCase):
@@ -44,9 +44,9 @@ class CarResolverTest(unittest.TestCase):
         self.assertEqual('some cars', cars)
 
     def test_throws_exception_when_manufacturer_is_bankrupt(self):
-        # Set the expected value of the CarApiClient method 'manifacturer_is_not_bankrupt' to False.
-        self.car_api_client.manifacturer_is_not_bankrupt.return_value = False
+        # Set the expected value of the CarApiClient method call
+        # TODO
 
-        # Here we assert that the BankruptManufacturerException is thrown when a non-existing manufacturer is given.
-        self.assertRaises(BankruptManufacturerException, self.car_resolver.get_all_cars, 'manufacturer')
+        # Assert that the BankruptManufacturerException is thrown when a non-existing manufacturer is given
+        # TODO
 
