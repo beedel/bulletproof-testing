@@ -65,8 +65,8 @@ in the command line.
 First, clone this repo
 
 ```
-git clone [REPO]
-cd [REPO]
+git clone https://github.com/beedel/bulletproof-testing.git
+cd bulletproof-testing
 ```
 
 
