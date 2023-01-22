@@ -69,8 +69,14 @@ git clone https://github.com/beedel/bulletproof-testing.git
 cd bulletproof-testing
 ```
 
-
-Try running the application with `python3 main.py Ford`. Does it work?
+Try running the application by entering `python3 main.py Ford` in the command line. Does it work?
+You should see 
+```angular2html
+Ford Fiesta
+Ford Mustang
+Ford Focus
+```
+printed on the command line.
 
 
 
