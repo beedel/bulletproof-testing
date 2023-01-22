@@ -78,9 +78,15 @@ Ford Focus
 ```
 printed on the command line.
 
+## Get to Know the Code
+Have a look at the `src` directory. You will see three files - `CarApiClient.py`, `CarRepository.py`, and `CarResolver.py`.
+All of the files have a comment explaining their purpose. Try to understand what their code does to ensure you can write test cases for it.
 
+Can you think of any happy/failure test cases for these files? What are the possible flows of the application? Do any of the classes ever throw an exception?
 
+If you want to, you can also have a look at the `main.py` file. It sets up the database and runs the application.
 
+## Get to Testing!
 
 
 ## Extra
