@@ -33,6 +33,7 @@ class CarResolverTest(unittest.TestCase):
     def test_gets_all_cars(self):
         # Arrange the expected values.
         self.car_api_client.manifacturer_is_not_bankrupt.return_value = True
+
         # Try setting up the CarRepository find_all_cars method to return 'some cars'.
         # TODO
 

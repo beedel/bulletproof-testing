@@ -1,6 +1,5 @@
 import unittest
 
-from src.Exception.ManufacturerNotFoundException import ManufacturerNotFoundException
 from src.CarApiClient import CarApiClient
 
 """
