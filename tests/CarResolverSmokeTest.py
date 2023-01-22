@@ -14,7 +14,7 @@ This is done to ensure that, for example, if the SQL code in CarRepository is ch
 it still works. If we did not have this test, we may encounter a situation where vital
 application functionality is down because of some unaccounted changes in the source code.
 
-Try to fill out the TODOs to get the test to run.
+Try to fill out the TODOs and ?s to get the test to run.
 """
 
 class CarResolverSmokeTest(unittest.TestCase):

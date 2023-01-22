@@ -86,23 +86,45 @@ Can you think of any happy/failure test cases for these files? What are the poss
 
 If you want to, you can also have a look at the `main.py` file. It sets up the database and runs the application.
 
+## Running the Tests
+Run a test with `python3 -m unittest tests/<Filename>.py`
+
+When you are done writing all of the tests, you can run all of them with `python3 -m unittest tests/*Test.py`.
+
 ## Get to Testing
 Let's write some tests for this application.
+
 
 ### CarApiClientTest.py
 Start with the `CarApiClientTest.py` file in the `tests/` folder. The comment above the class name includes guidance on what is already there and what is missing. Can you finish writing the test code for this class?
 
 ### CarResolverTest.py
-Start with the `CarResolverTest.py` file in the `tests/` folder. The comment above the class name includes guidance on what is already there and what is missing. Can you finish writing the test code for this class?
+Now look at the `CarResolverTest.py` file in the `tests/` folder. The comment above the class name includes guidance on what is already there and what is missing. Can you finish writing the test code for this class?
 
 ### Whoops!
-Now think of this scenario.
+You wrote all these test cases and thought you had it all. Think again!
+
+In the `CarResolverTest.py` file you mocked out the database. This is good, because it makes your tests faster and ensures that you can control the values it returns.
+
+But what if somebody changed the code for `CarRepository.py` and broke it?
+
+Imagine an intern comes in, sees the line 
+```
+cursor.execute("SELECT * FROM cars WHERE brand=?", (manufacturer,))
+```
+and decides to follow proper naming conventions and change `brand` to `manufacturer`. After all, consistency is key!
+
+Try changing it and running the application again. Does it break?
+
+Now run the `CarResolverTest.py` file. All good?
+
+We need to fix this. 
+
+### CarResolverSmokeTest.py
+Look at the `CarResolverSmokeTest.py` file in the `tests/` folder. The comment above the class name includes guidance on what is already there and what is missing. Can you finish writing the test code for this class?
 
 
 ## Extra
-
-Run tests with `python3 -m unittest tests/*Test.py`
-
 
 Check test coverage with:
 
