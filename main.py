@@ -28,6 +28,8 @@ def main(car_resolver):
             print(car[1], car[2])
 
 
+
+
 def initialise_db():
     conn = sqlite3.connect('car_database')
     c = conn.cursor()
