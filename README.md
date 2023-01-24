@@ -95,16 +95,16 @@ When you are done writing all of the tests, you can run all of them with `python
 Let's write some tests for this application.
 
 
-### CarApiClientTest.py
-Start with the `CarApiClientTest.py` file in the `tests/` folder. The comment above the class name includes guidance on what is already there and what is missing. Can you finish writing the test code for this class?
+### test_car_api_client.py
+Start with the `test_car_api_client.py` file in the `tests/` folder. The comment above the class name includes guidance on what is already there and what is missing. Can you finish writing the test code for this class?
 
-### CarResolverTest.py
-Now look at the `CarResolverTest.py` file in the `tests/` folder. The comment above the class name includes guidance on what is already there and what is missing. Can you finish writing the test code for this class?
+### test_car_resolver.py
+Now look at the `test_car_resolver.py` file in the `tests/` folder. The comment above the class name includes guidance on what is already there and what is missing. Can you finish writing the test code for this class?
 
 ### Whoops!
 You wrote all these test cases and thought you had it all. Think again!
 
-In the `CarResolverTest.py` file you mocked out the database. This is good, because it makes your tests faster and ensures that you can control the values it returns.
+In the `test_car_resolver.py` file you mocked out the database. This is good, because it makes your tests faster and ensures that you can control the values it returns.
 
 But what if somebody changed the code for `CarRepository.py` and broke it?
 
@@ -116,12 +116,12 @@ and decides to follow proper naming conventions and change `brand` to `manufactu
 
 Try changing it and running the application again. Does it break?
 
-Now run the `CarResolverTest.py` file. All good?
+Now run the `test_car_resolver.py` file. All good?
 
 We need to fix this. 
 
 ### CarResolverSmokeTest.py
-Look at the `CarResolverSmokeTest.py` file in the `tests/` folder. The comment above the class name includes guidance on what is already there and what is missing. Can you finish writing the test code for this class?
+Look at the `test_car_resolver_smoke_test.py` file in the `tests/` folder. The comment above the class name includes guidance on what is already there and what is missing. Can you finish writing the test code for this class?
 
 ## Motorbikes
 
@@ -133,15 +133,14 @@ Then, you will need to complete the test cases to achieve a 100% line coverage f
 Some of the test cases have been written for you.
 
 Before writing any tests please do the following:
-1. Uncomment line 10 (checkIfBikeExists)
+1. Uncomment lines 29-31 in main.py. (you may comment out the rest of the lines in that method)
 2. Run the code and observe what happens.
 3. Change the url in MotorBikeConnector from bikernet to something else e.g.: google.com/... , see what happens and change it back to bikernet
-3. Now uncomment line 11 and run the code.
-   Endpoints on a 3rd party server might change, if the server exists your post request gets there, but you may receive a response back with status_code 404 or 405
-   Notice how the try-except behaves
-4. Adjust your code with an if statement or similar surrounding the post to handle for non-200 responses. Depending on how a website is implemented you may need to handle errors like this as exceptions are not always thrown. This just shows how important writing comprehensive tests and manual testing can be.
+4. Now change the subdirectory for either of the urls to something random and see what happens (e.g.: change /getPriceForBike to /getPriceForApple). Then set it back to what it was.
 
-Now you can proceed and fill in the test cases. There's one there as an example. In this exercise you will mainly be using @patch()
+Now you can proceed and fill in the test cases in ```test_motorbike_connector.py``` .
+In this exercise you will mainly be using @patch()
+There's one there as an example to show you how to use @patch() (```test_check_if_bike_exists_returns_404()```). You still need to finish the assertion though.
 
 Below is some help for using patch and mocks:
 use patch to override call of frequests
@@ -173,8 +172,20 @@ Then test the case where an Exception is being thrown by your mock: see if it ra
             call("Line you expect"),
             call("Another line you expect"),
             call("Yet another line you expect"),
-        ], any_order=False)```
-   False if order matters, true otherwise
+        ], any_order=False)
+   ```
+   any_order is False if order matters, True otherwise
+
+## Last 10 minutes
+When you are nearing the end of the workshop, for any test cases you have not finished replace the contents of the test case with self.assertEqual(1,1)
+
+Then on the command line/terminal/python envrionment at the top level of this project do ```pip install mutmut```
+
+Run ```mutmut run``` and see how many mutants were created and how many survived. Calculate your mutation score (killed/total)
+
+Run ```mutmut results``` and try analyzing your results using ```mutmut result-ids``` to see the result ids and ```mutmut show <id>``` to view a mutant.
+
+Try and think if the mutant is sensible and how could you have improved your test cases.
 ## Extra
 
 Check test coverage with:

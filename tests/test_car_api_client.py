@@ -1,6 +1,7 @@
 import unittest
 
 from src.CarApiClient import CarApiClient
+from src.Exception.ManufacturerNotFoundException import ManufacturerNotFoundException
 
 """
 This is the test class for CarApiClient.

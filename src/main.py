@@ -4,7 +4,7 @@ import sqlite3
 from src.CarResolver import CarResolver
 from src.CarApiClient import CarApiClient
 from src.CarRepository import CarRepository
-
+from src.Motorbike.MotorBikeConnector import MotorBikeConnector
 
 """
 To run the application, type:
@@ -26,6 +26,9 @@ def main(car_resolver):
     if len(cars) > 0:
         for car in cars:
             print(car[1], car[2])
+    #motorbike_connector = MotorBikeConnector()
+    #print(motorbike_connector.check_if_bike_exists("Honda"))
+    #print(motorbike_connector.get_price_for_bike("Honda"))
 
 
 

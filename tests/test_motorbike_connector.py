@@ -6,6 +6,27 @@ from src.Motorbike.MotorBikeConnector import MotorBikeConnector
 class TestMotorBikeConnector(unittest.TestCase):
 
     @patch('src.Motorbike.Internet.frequests.post')
+    @patch('builtins.print')
+    def test_check_if_bike_exists_returns_404(self, mock_print, mock_post):
+        # This one is done for you :)
+        # Arrange
+        mock_post.return_value.status_code = 404
+        mock_post.return_value.text = "Page not found"
+
+        # Act
+        connector = MotorBikeConnector()
+        result = connector.check_if_bike_exists("Harley Davidson")
+
+        # Assert mock called
+        mock_post.assert_called_with(url="www.bikernet.com/checkExist", json={'bikeName': "Harley Davidson"})
+
+        # Assert mock returned right calls using assertEqual or else
+        # TODO
+        # Assert that mock_print was called with the right strings (if you are stuck look at the readme on how to use assert_has_calls
+        # TODO
+        return
+
+    @patch('src.Motorbike.Internet.frequests.post')
     def test_check_if_bike_exists(self, mock_post):
         #Check if mock_post returns 200 status code and "True" as text, check_if_bike_exist returns "True" as a result
         #Also check/assert that your mock was called with the parameter's you expect (correct url and correct json payload)
@@ -18,27 +39,6 @@ class TestMotorBikeConnector(unittest.TestCase):
         # Assert
         return
 
-    @patch('src.Motorbike.Internet.frequests.post')
-    @patch('builtins.print')
-    def test_check_if_bike_exists_returns_404(self, mock_print, mock_post):
-        #This one is done for you :)
-        # Arrange
-        mock_post.return_value.status_code = 404
-        mock_post.return_value.text = "Page not found"
-
-        # Act
-        connector = MotorBikeConnector()
-        result = connector.check_if_bike_exists("Harley Davidson")
-
-        # Assert mock called
-        mock_post.assert_called_with(url="www.bikernet.com/checkExist", json={'bikeName': "Harley Davidson"})
-
-        # Assert mock returned right calls
-        self.assertEqual(result, None)
-        mock_print.assert_has_calls([
-            call("I got a not OK response"),
-            call("Ooops something went wrong"),
-        ], any_order=False)
 
     def test_check_if_bike_exists_with_exception(self):
         #Here the post request should return with an exception
