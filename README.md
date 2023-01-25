@@ -89,7 +89,7 @@ If you want to, you can also have a look at the `main.py` file. It sets up the d
 ## Running the Tests
 Run a test with `python3 -m unittest tests/<Filename>.py`
 
-When you are done writing all of the tests, you can run all of them with `python3 -m unittest tests/*Test.py`.
+When you are done writing all of the tests, you can run all of them with `python3 -m unittest`, if it does not work you can try running `python3 -m unittest tests/test_*.py`.
 
 ## Get to Testing
 Let's write some tests for this application.
