@@ -87,7 +87,7 @@ Can you think of any happy/failure test cases for these files? What are the poss
 If you want to, you can also have a look at the `main.py` file. It sets up the database and runs the application.
 
 ## Running the Tests
-Run a test with `python3 -m unittest tests/<Filename>.py`
+Run a test with `python3 -m unittest test/<Filename>.py`
 
 When you are done writing all of the tests, you can run all of them with `python3 -m unittest`, if it does not work you can try running `python3 -m unittest tests/test_*.py`.
 
